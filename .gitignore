@@ -1,0 +1,11 @@
+# Ignore system files
+Thumbs.db
+.DS_Store
+
+# Ignore FiveM cache and temp files
+cache/
+*.log
+*.tmp
+
+# Ignore node_modules or other dependency folders
+node_modules/

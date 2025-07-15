@@ -1,0 +1,390 @@
+/* Estilos base */
+body {
+    background: transparent;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+#vehicle-ui {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    z-index: 1000;
+    pointer-events: none;
+}
+
+#vehicle-ui.hidden {
+    display: none;
+}
+
+.container {
+    background: rgba(26, 26, 46, 0.9);
+    border-radius: 12px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+    padding: 20px 24px;
+    width: 280px;
+    margin-right: 20px;
+    pointer-events: auto;
+    border: 1px solid rgba(0, 225, 255, 0.3);
+        /* backdrop-filter: blur(10px); */
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 16px;
+}
+
+.header h1 {
+    color: #fff;
+    font-size: 1.4rem;
+    margin: 0;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.close-btn {
+    background: rgba(231, 76, 60, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 28px;
+    height: 28px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.close-btn:hover {
+    background: rgba(231, 76, 60, 1);
+    transform: scale(1.1);
+}
+
+.vehicle-info {
+    margin: 16px 0 12px 0;
+}
+
+.vehicle-name {
+    color: #00e1ff;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin-bottom: 8px;
+    letter-spacing: 0.5px;
+    min-height: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    word-break: break-word;
+}
+
+.vehicle-stats {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
+    padding: 6px 12px;
+    background: rgba(0, 225, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 225, 255, 0.2);
+}
+
+.vehicle-stat {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.vehicle-controls {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.nav-btn {
+    background: rgba(44, 62, 80, 0.8);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    width: 32px;
+    height: 32px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+.nav-btn:hover {
+    background: rgba(0, 225, 255, 0.8);
+    color: #1a1a2e;
+    transform: scale(1.05);
+}
+
+#vehicle-index {
+    background: rgba(35, 39, 43, 0.8);
+    color: #fff;
+    border: 1px solid #00e1ff;
+    border-radius: 6px;
+    font-size: 0.9rem;
+    padding: 6px 8px;
+    width: 60px;
+    text-align: center;
+    transition: all 0.2s ease;
+}
+#vehicle-index:focus {
+    outline: none;
+    border-color: #0099cc;
+    box-shadow: 0 0 0 2px rgba(0, 225, 255, 0.2);
+}
+
+.camera-controls {
+    margin-top: 12px;
+    padding: 8px 12px;
+    background: rgba(0, 225, 255, 0.05);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 225, 255, 0.1);
+}
+
+.control-hint {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 4px;
+    padding: 4px 0;
+}
+
+.control-hint:last-child {
+    margin-bottom: 0;
+}
+
+.control-hint .key {
+    background: rgba(0, 225, 255, 0.8);
+    color: #1a1a2e;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-size: 0.7rem;
+    font-weight: 700;
+    min-width: 16px;
+    text-align: center;
+}
+
+.control-hint .action {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+/* Timer HUD discreto para drive test */
+.timer-hud {
+    position: fixed;
+    top: 70px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 2000;
+    pointer-events: none;
+}
+
+.timer-hud.hidden {
+    display: none !important;
+}
+
+.timer-content {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding: 4px 8px;
+    background: rgba(0, 0, 0, 0.2);
+    border-radius: 15px;
+    border: 1px solid rgba(0, 225, 255, 0.3);
+    /* backdrop-filter: blur(3px); */
+}
+
+.timer-label {
+    color: #ffffff;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.8);
+    opacity: 0.9;
+}
+
+.timer-time {
+    color: #00e1ff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    font-family: 'Courier New', monospace;
+    text-shadow: 
+        0 0 8px rgba(0, 225, 255, 0.6),
+        0 1px 2px rgba(0, 0, 0, 0.8);
+    letter-spacing: 1px;
+    min-width: 45px;
+    text-align: center;
+}
+
+.timer-time.timer-warning {
+    color: #ff6b6b;
+    text-shadow: 
+        0 0 10px rgba(255, 107, 107, 0.8),
+        0 1px 2px rgba(0, 0, 0, 0.8);
+    animation: pulseWarning 0.8s ease-in-out infinite;
+}
+
+/* Animaciones discretas */
+@keyframes pulseWarning {
+    0%, 100% { 
+        transform: scale(1);
+        opacity: 1;
+    }
+    50% { 
+        transform: scale(1.05);
+        opacity: 0.8;
+    }
+}
+
+.search-section {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 24px;
+}
+
+#search-input {
+    flex: 1;
+    background: rgba(35, 39, 43, 0.8);
+    color: #fff;
+    border: 2px solid rgba(0, 225, 255, 0.3);
+    border-radius: 10px;
+    font-size: 1rem;
+    padding: 10px 16px;
+    transition: all 0.3s ease;
+}
+#search-input:focus {
+    outline: none;
+    border-color: #00e1ff;
+    box-shadow: 0 0 0 3px rgba(0, 225, 255, 0.2);
+}
+#search-input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-btn {
+    background: linear-gradient(135deg, #27ae60 0%, #2ecc71 100%);
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(39, 174, 96, 0.3);
+}
+.search-btn:hover {
+    background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);
+    transform: scale(1.05);
+}
+
+.controls-info {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    padding: 16px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.control-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    background: rgba(0, 225, 255, 0.1);
+    border-radius: 8px;
+    border: 1px solid rgba(0, 225, 255, 0.2);
+}
+
+.key {
+    background: #00e1ff;
+    color: #1a1a2e;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    min-width: 20px;
+    text-align: center;
+}
+
+.action {
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* Scrollbar personalizada */
+.container::-webkit-scrollbar {
+    width: 8px;
+}
+
+.container::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb {
+    background: #00e1ff;
+    border-radius: 10px;
+}
+
+.container::-webkit-scrollbar-thumb:hover {
+    background: #0099cc;
+}
+
+/* Animaciones */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.container {
+    animation: fadeIn 0.3s ease-out;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .container {
+        width: 250px;
+        margin-right: 10px;
+        padding: 16px 20px;
+    }
+    
+    .header h1 {
+        font-size: 1.2rem;
+    }
+    
+    .vehicle-name {
+        font-size: 1rem;
+    }
+    
+    .controls-info {
+        grid-template-columns: 1fr;
+    }
+    
+    .search-section {
+        flex-direction: column;
+    }
+    
+    .nav-btn {
+        width: 28px;
+        height: 28px;
+        font-size: 1rem;
+    }
+} 

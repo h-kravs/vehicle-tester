@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Tester by Future</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="vehicle-ui" class="hidden">
+        <div class="container">
+            <div class="header">
+                <h1>Vehicle Tester</h1>
+                <button id="close-btn" class="close-btn">✕</button>
+            </div>
+            <div class="vehicle-info">
+                <div id="vehicle-name" class="vehicle-name"></div>
+                <div class="vehicle-stats">
+                    <span id="vehicle-index-display" class="vehicle-stat"></span>
+                    <span class="vehicle-stat">/ <span id="vehicle-total"></span></span>
+                </div>
+            </div>
+            <div class="vehicle-controls">
+                <button id="prev-btn" class="nav-btn">‹</button>
+                <input id="vehicle-index" type="number" min="1" value="1" placeholder="Index" />
+                <button id="next-btn" class="nav-btn">›</button>
+            </div>
+            <div class="camera-controls">
+                <div class="control-hint">
+                    <span class="key">B</span>
+                    <span class="action">Toggle Camera Lock</span>
+                </div>
+                <div class="control-hint">
+                    <span class="key">V</span>
+                    <span class="action">Toggle View</span>
+                </div>
+                <div class="control-hint">
+                    <span class="key">X</span>
+                    <span class="action">Drive Test (1min)</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div id="drive-test-timer" class="timer-hud hidden">
+        <div class="timer-content">
+            <span class="timer-label">Drive Test</span>
+            <span id="timer-display" class="timer-time">01:00</span>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html> 
