@@ -18,19 +18,6 @@ Advanced vehicle testing and preview system for FiveM servers with a modern web 
 2. Add `start vehiclestest` to your `server.cfg`
 3. Restart your server
 
-# Vehicle Tester for FiveM
-
-├── html/
-│   ├── index.html        # UI structure
-│   ├── style.css         # UI styling
-│   └── script.js         # UI interactions
-├── config/
-│   └── config.lua        # Configuration file
-├── data/
-│   └── vehicles.json     # Vehicle list
-└── fxmanifest.lua        # Resource manifest
-
-
 ## Vehicle Management
 Vehicles are stored in `data/vehicles.json`. To add or remove vehicles:
 1. Edit the JSON file
